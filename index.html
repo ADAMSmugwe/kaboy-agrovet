@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaboy Agrovet - Empowering Farmers in Kianjai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --accent-color: #8bc34a;
+            --dark-green: #1b5e20;
+            --light-green: #c8e6c9;
+            --text-color: #333;
+            --light-text: #f5f5f5;
+            --background: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* Welcome Animation */
+        .welcome-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2000;
+            animation: fadeOut 1s ease-in-out 3s forwards;
+        }
+
+        .welcome-animation h1 {
+            color: white;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: slideIn 1s ease-out 0.5s forwards;
+        }
+
+        .welcome-animation p {
+            color: var(--light-green);
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: slideIn 1s ease-out 1s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Products Section */
+        #products {
+            background-color: var(--light-green);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
+
+        .product-info .price {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Orders Section */
+        #orders {
+            background-color: white;
+        }
+
+        .order-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .order-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-green);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .payment-method {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .payment-option input {
+            margin-right: 10px;
+        }
+
+        .mpesa-instructions {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .order-summary {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--light-green);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--light-green);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container {
+            margin-top: 40px;
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-green);
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--light-green);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .welcome-animation h1 {
+                font-size: 2rem;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Animation -->
+    <div class="welcome-animation">
+        <h1>Welcome to Kaboy Agrovet</h1>
+        <p>Empowering Farmers in Kianjai!</p>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    <i class="fas fa-leaf"></i> Kaboy Agrovet
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products & Services</a></li>
+                    <li><a href="#orders">Orders & MPesa</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Your Trusted Agricultural Partner</h1>
+            <p>Providing quality farming inputs and veterinary services to farmers in Kianjai and beyond since 2010.</p>
+            <a href="#products" class="btn">Our Products</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Kaboy Agrovet was established in 2010 with a mission to empower local farmers in Kianjai, Meru County with high-quality agricultural inputs and expert advice. What started as a small agrovet shop has grown into a trusted agricultural hub serving hundreds of farmers in the region.</p>
+                    <p>Our team consists of experienced agronomists and veterinary professionals who are passionate about helping farmers achieve better yields and healthier livestock. We believe in sustainable farming practices that benefit both the farmer and the environment.</p>
+                    <p>At Kaboy Agrovet, we don't just sell products - we build relationships and provide solutions tailored to your farming needs.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kaboy Agrovet Store">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Our Products & Services</h2>
+            <p class="text-center">We offer a wide range of quality agricultural products and professional services</p>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Seeds">
+                    </div>
+                    <div class="product-info">
+                        <h3>Quality Seeds</h3>
+                        <p>High germination rate seeds for various crops including maize, beans, vegetables, and more.</p>
+                        <p class="price">From KSh 250</p>
+                        <a href="#orders" class="btn">Order Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fertilizers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fertilizers</h3>
+                        <p>Organic and inorganic fertilizers to boost your crop yields. We carry all major brands.</p>
+                        <p class="price">From KSh 1,200</p>
+                        <a href="#orders" class="btn">Order Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Animal Feeds">
+                    </div>
+                    <div class="product-info">
+                        <h3>Animal Feeds</h3>
+                        <p>Nutritionally balanced feeds for poultry, dairy cattle, pigs, and other livestock.</p>
+                        <p class="price">From KSh 1,500</p>
+                        <a href="#orders" class="btn">Order Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pesticides">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pesticides & Herbicides</h3>
+                        <p>Effective solutions for pest and weed control to protect your crops.</p>
+                        <p class="price">From KSh 800</p>
+                        <a href="#orders" class="btn">Order Now</a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1579165466749-5650dfd7f4e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Vet Services">
+                    </div>
+                    <div class="product-info">
+                        <h3>Veterinary Services</h3>
+                        <p>Professional animal health services including vaccinations, deworming, and treatment.</p>
+                        <p class="price">From KSh 500</p>
+                        <a href="#orders" class="btn">Book Service</a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Farming Tools">
+                    </div>
+                    <div class="product-info">
+                        <h3>Farming Tools & Equipment</h3>
+                        <p>Quality tools for all your farming needs from planting to harvesting.</p>
+                        <p class="price">From KSh 350</p>
+                        <a href="#orders" class="btn">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders Section -->
+    <section id="orders">
+        <div class="container">
+            <h2>Place Your Order</h2>
+            <p class="text-center">Order our products and pay conveniently via MPesa</p>
+            
+            <div class="order-container">
+                <div class="order-form">
+                    <h3>Order Form</h3>
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (Optional)</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Select Product/Service</label>
+                            <select id="product" name="product" required>
+                                <option value="">-- Select Product --</option>
+                                <option value="Maize Seeds">Maize Seeds (KSh 250 per kg)</option>
+                                <option value="Bean Seeds">Bean Seeds (KSh 350 per kg)</option>
+                                <option value="DAP Fertilizer">DAP Fertilizer (KSh 3,200 per 50kg)</option>
+                                <option value="CAN Fertilizer">CAN Fertilizer (KSh 2,800 per 50kg)</option>
+                                <option value="Poultry Feed">Poultry Feed (KSh 1,500 per 25kg)</option>
+                                <option value="Dairy Meal">Dairy Meal (KSh 2,000 per 50kg)</option>
+                                <option value="Herbicide">Herbicide (KSh 800 per liter)</option>
+                                <option value="Vaccination">Vaccination Service (KSh 500 per animal)</option>
+                                <option value="Deworming">Deworming Service (KSh 500 per animal)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery">Delivery Method</label>
+                            <select id="delivery" name="delivery" required>
+                                <option value="Pick Up">Pick Up at Store</option>
+                                <option value="Delivery">Delivery (Free Delivery within Kianjai)</option>
+                                <option value="Delivery">Ngundune (KSHS 50)</option>
+                                <option value="Delivery">Mutindwa (Kshs 100)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" name="notes"></textarea>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <h3>Payment Method</h3>
+                            <div class="payment-option">
+                                <input type="radio" id="mpesa" name="payment" value="MPesa" checked>
+                                <label for="mpesa">MPesa Payment</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="cash" name="payment" value="Cash">
+                                <label for="cash">Cash on Pickup/Delivery</label>
+                            </div>
+                            
+                            <div class="mpesa-instructions" id="mpesaInstructions">
+                                <p>To complete your payment via MPesa:</p>
+                                <ol>
+                                    <li>Go to MPesa menu on your phone</li>
+                                    <li>Select "Lipa na MPesa"</li>
+                                    <li>Enter Paybill: 123456</li>
+                                    <li>Enter Account: Your Order ID</li>
+                                    <li>Enter Amount: KSh <span id="mpesaAmount">0</span></li>
+                                    <li>Enter your MPesa PIN and send</li>
+                                </ol>
+                                <p>You will receive a confirmation message once payment is received.</p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Place Order</button>
+                    </form>
+                </div>
+                
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="summaryContent">
+                        <p>Your order details will appear here after you select products.</p>
+                    </div>
+                    <div class="summary-total">
+                        Total: KSh <span id="totalAmount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="text-center">Get in touch with us for inquiries, orders, or expert advice</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Location</h3>
+                    <p>Visit our store in Kianjai Town, Meru County. We're open Monday to Saturday from 8:00 AM to 6:00 PM.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+254 712 345 678</p>
+                                <p>+254 723 456 789</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@kaboyagrovet.com</p>
+                                <p>sales@kaboyagrovet.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Opening Hours</h4>
+                                <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                                <p>Sat: 8:00 AM - 4:00 PM</p>
+                                <p>Sun: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="contactSubject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="contactMessage" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d37.12345678901234!3d-0.1234567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMDcnMjQuNCJTIDM3wrAwNyczNi4wIkU!5e0!3m2!1sen!2ske!4v1234567890123!5m2!1sen!2ske" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kaboy Agrovet</h3>
+                    <p>Empowering farmers in Kianjai and Meru County with quality agricultural inputs and expert advice since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#orders">Order Online</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#products">Seeds</a></li>
+                        <li><a href="#products">Fertilizers</a></li>
+                        <li><a href="#products">Animal Feeds</a></li>
+                        <li><a href="#products">Pesticides</a></li>
+                        <li><a href="#products">Vet Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kianjai Town, Meru County</li>
+                        <li><i class="fas fa-phone"></i> +254 791154865</li>
+                        <li><i class="fas fa-envelope"></i> info@kaboyagrovet.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Kaboy Agrovet. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+254791154865?text=Hello%20Kaboy%20Agrovet,%20I%20have%20an%20inquiry" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Welcome Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // This will automatically hide after the animation duration
+        });
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Order Form Functionality
+        const orderForm = document.getElementById('orderForm');
+        const productSelect = document.getElementById('product');
+        const quantityInput = document.getElementById('quantity');
+        const deliverySelect = document.getElementById('delivery');
+        const mpesaRadio = document.getElementById('mpesa');
+        const mpesaInstructions = document.getElementById('mpesaInstructions');
+        const summaryContent = document.getElementById('summaryContent');
+        const totalAmount = document.getElementById('totalAmount');
+        const mpesaAmount = document.getElementById('mpesaAmount');
+
+        // Product prices
+        const productPrices = {
+            'Maize Seeds': 250,
+            'Bean Seeds': 350,
+            'DAP Fertilizer': 3200,
+            'CAN Fertilizer': 2800,
+            'Poultry Feed': 1500,
+            'Dairy Meal': 2000,
+            'Herbicide': 800,
+            'Vaccination': 500,
+            'Deworming': 500
+        };
+
+        // Update order summary
+        function updateOrderSummary() {
+            const product = productSelect.value;
+            const quantity = parseInt(quantityInput.value) || 0;
+            const delivery = deliverySelect.value;
+            
+            if (!product) {
+                summaryContent.innerHTML = '<p>Your order details will appear here after you select products.</p>';
+                totalAmount.textContent = '0';
+                mpesaAmount.textContent = '0';
+                return;
+            }
+            
+            const productPrice = productPrices[product];
+            const subtotal = productPrice * quantity;
+            let deliveryFee = 0;
+            
+            if (delivery === 'Delivery') {
+                deliveryFee = 200;
+            }
+            
+            const total = subtotal + deliveryFee;
+            
+            let summaryHTML = `
+                <div class="summary-item">
+                    <span>Product:</span>
+                    <span>${product}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Unit Price:</span>
+                    <span>KSh ${productPrice}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Quantity:</span>
+                    <span>${quantity}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span>KSh ${subtotal}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Delivery:</span>
+                    <span>${delivery} ${deliveryFee > 0 ? '(KSh ' + deliveryFee + ')' : ''}</span>
+                </div>
+            `;
+            
+            summaryContent.innerHTML = summaryHTML;
+            totalAmount.textContent = total;
+            mpesaAmount.textContent = total;
+        }
+
+        // Show/hide MPesa instructions
+        mpesaRadio.addEventListener('change', function() {
+            if (this.checked) {
+                mpesaInstructions.style.display = 'block';
+            } else {
+                mpesaInstructions.style.display = 'none';
+            }
+        });
+
+        // Form submission
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const product = productSelect.value;
+            const quantity = parseInt(quantityInput.value) || 0;
+            
+            if (!product || quantity < 1) {
+                alert('Please select a product and enter a valid quantity.');
+                return;
+            }
+            
+            // In a real application, you would send this data to your backend
+            alert('Order placed successfully! You will receive a confirmation message shortly.');
+            orderForm.reset();
+            updateOrderSummary();
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send this data to your backend
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Event listeners for order updates
+        productSelect.addEventListener('change', updateOrderSummary);
+        quantityInput.addEventListener('input', updateOrderSummary);
+        deliverySelect.addEventListener('change', updateOrderSummary);
+
+        // Initialize order summary
+        updateOrderSummary();
+    </script>
+</body>
+</html>
